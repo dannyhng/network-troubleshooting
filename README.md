@@ -37,47 +37,16 @@ Shows whether the port is connected, notconnect, or err-disabled.
 
 ## Flowchart: Troubleshooting Switch Media Issues
 
+![Troubleshooting Flowchart](./troubleshoot_flowchart.png)
+
 ## Interface Status Code Reference
 
-Line Status
-
-Protocol Status
-
-Interface Status
-
-Common Cause
-
-administratively down
-
-down
-
-disabled
-
-Interface shutdown via shutdown cmd
-
-down
-
-down
-
-notconnect
-
-Bad cable or no cable
-
-up
-
-down
-
-notconnect
-
-Cable plugged but no signal
-
-up
-
-up
-
-connected
-
-Normal operation
+| Line Status              | Protocol Status | Interface Status | Common Cause                                   |
+|--------------------------|------------------|------------------|------------------------------------------------|
+| `administratively down` | `down`           | disabled         | Interface manually shutdown via config         |
+| `down`                  | `down`           | notconnect       | No cable connected or faulty cable             |
+| `up`                    | `down`           | notconnect       | Cable present, but the far end is down         |
+| `up`                    | `up`             | connected        | Interface working normally                     |
 
 ## Check Speed and Duplex Mismatches
 
